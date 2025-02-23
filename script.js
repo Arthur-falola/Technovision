@@ -39,7 +39,8 @@ const articles = [
   { title: "Les startups technologiques africaines", link: "article8.html" },
   { title: "La réalité augmentée en 2024", link: "article9.html" },
   { title: "L'énergie renouvelable et la technologie", link: "article10.html" },
-  { title:  "Les meilleurs languages de programmation en 2024", link: "langage-progammation.html" }, 
+  { title:  "Les meilleurs languages de programmation en 2024", link: "langage-progammation.html" },
+    { title: "L'astéroïde 2024 yr4 les risques de collision avec la terre",link: "astereoide2024yr4.html"},
 ];
 
 // Fonction de recherche
@@ -55,30 +56,3 @@ document.getElementById("searchButton").addEventListener("click", function () {
     alert("Aucun article correspondant trouvé.");
   }
 });
-/*section de getion de la date de publication*/
-document.addEventListener("DOMContentLoaded", function() {
-    // Sélectionner tous les éléments où afficher la date
-    let articles = document.querySelectorAll(".article-date");
-
-    // Obtenir la date et l'heure actuelle
-    let now = new Date();
-    let dateString = now.toLocaleString("fr-FR", { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit'
-    });
-
-    // Ajouter la date et l'heure à chaque article
-    articles.forEach(article => {
-        article.textContent = "Publié le " + dateString;
-    });
-});
-
-// afficher les erreurs
-window.onerror = function(message, source, lineno, colno, error) {
-    document.body.innerHTML += `<p style="color: red;">Erreur JS : ${message} (ligne ${lineno})</p>`;
-};
-
